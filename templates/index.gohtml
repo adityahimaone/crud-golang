@@ -1,0 +1,49 @@
+{{define "Index"}}
+    {{template "header.gohtml"}}
+    <div class="container-fluid">
+        <main>
+            <div class="px-4 py-5 my-3 text-center bg-danger rounded-3">
+                <img class="d-block mx-auto mb-4"
+                     src="/static/images/logo.png"
+                     alt="" width="85" height="85">
+                <h1 class="display-5 fw-bold text-white">Teng Teng</h1>
+                <div class="col-lg mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                        world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive
+                        grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <a href="/form" type="button" class="btn btn-light btn-lg px-4 gap-3">Tambah Data</a>
+                        <button type="button" class="btn btn-outline-dark btn-lg px-4">Secondary</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tabel-anggota" class="py-4">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                            <td>No</td>
+                            <td>Nama</td>
+                            <td>Ngapain aja</td>
+                            <td>Hobi</td>
+                            </thead>
+                            {{ range . }}
+                                <tr>
+                                    <td>{{ .Id }}</td>
+                                    <td> {{ .Name }}</td>
+                                    <td>{{ .Job }}</td>
+                                    <td>{{ .Hobby }}</td>
+                                </tr>
+                            {{ end }}
+                        </table>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    {{template "footer.gohtml"}}
+{{ end }}

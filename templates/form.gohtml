@@ -1,0 +1,45 @@
+{{define "Form"}}
+    {{template "header.gohtml"}}
+    <div class="container-fluid">
+        <main>
+            <div class="d-flex justify-content-center flex-column my-3">
+                <div class="row">
+                    <div class="col text-center">
+                        <h3>FORM TAMBAH DATA</h3>
+                    </div>
+                </div>
+                <div class="row py-4">
+                    <div class="col"></div>
+                    <div class="col-4 align-self-center">
+                        <form action="/form" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label class="form-label">Nama</label>
+                                <input type="text" class="form-control" name="name" required>
+                                <div class="valid-feedback">
+                                    Please Insert
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Job</label>
+                                <input type="text" class="form-control" name="job" required>
+                                <div class="valid-feedback">
+                                    Please Insert
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Hobby</label>
+                                <input type="text" class="form-control" name="hobby" required>
+                                <div class="valid-feedback">
+                                    Please Insert
+                                </div>
+                            </div>
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </form>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    {{template "footer.gohtml"}}
+{{end}}
